@@ -5,7 +5,7 @@ interface Props {
     addNote(note: string): void;
 }
 
-export const InputNote:  React.FC<Props> = ({addNote}) => {
+export const InputNote: React.FC<Props> = ({ addNote }) => {
 
     const [note, setNote] = useState('');
 
@@ -21,8 +21,25 @@ export const InputNote:  React.FC<Props> = ({addNote}) => {
 
     return (
         <div>
-            <input value={note} onChange={updateNote} name='note' placeholder='Note' type='text'/>
-            <button onClick={AddNote}>Add Note</button>
-        </div>
+            <input
+                value={note}
+                onChange={updateNote}
+                name='note'
+                placeholder='Note' type='text'
+                style={{ width: '40%', height: '30px' }}
+            />
+            <button onClick={AddNote}
+                style={{
+                    backgroundColor: '#4CAF50',
+                    border: 'none',
+                    color: 'white',
+                    padding: '10px 28px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    margin: '7px'
+            }}
+            >Add Note</button>
+        </div >
     )
 }
